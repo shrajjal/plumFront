@@ -4,6 +4,12 @@ An interactive quiz application powered by AI that generates multiple-choice que
 
 ---
 
+## 🔗 Live Demo
+
+👉 [Click here to try the app](https://plumfront.onrender.com/)
+
+---
+
 ## 🚀 Features
 
 * 🎯 AI-generated multiple-choice questions
@@ -46,6 +52,7 @@ plumFront/
 │── eslint.config.js      # ESLint configuration
 ```
 
+---
 
 ## ⚡ Getting Started
 
@@ -101,8 +108,6 @@ npm run dev
 ### 🏆 Result Page
 
 ![Result Page](./screenshots/result.png)
-
-
 
 ---
 
