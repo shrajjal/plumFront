@@ -1,16 +1,116 @@
-# React + Vite
+# 🤖 AI Quiz App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive quiz application powered by AI that generates multiple-choice questions (MCQs) dynamically based on selected topics. Built with **React**, **TailwindCSS**, and integrated with an AI API for question generation.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## React Compiler
+* 🎯 AI-generated multiple-choice questions
+* 📊 Progress tracking and score calculation
+* 💡 Instant feedback on answers
+* 🎨 Responsive UI with TailwindCSS
+* 🔄 Retry mechanism to handle malformed AI responses
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* **Frontend:** React, TailwindCSS, React Router DOM
+* **Backend / AI:** Gemini AI
+* **State Management:** React Hooks
+* **HTTP Requests:** Axios
+
+---
+
+## 📂 Project Structure
+
+```
+AI-Quiz-App/
+│── public/
+│── src/
+│   ├── assets/          # Static data & images
+│   ├── components/      # Reusable UI components
+│   ├── pages/           # Quiz screens & landing page
+│   ├── App.js           # Main app entry
+│   ├── index.js         # React root
+│── package.json
+│── README.md
+```
+
+---
+
+## ⚡ Getting Started
+
+### 1. Clone the repo
+
+```bash
+git clone https://github.com/shrajjal/plumFront.git
+cd plumFront
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Add environment variables
+
+Create a `.env` file in the root directory:
+
+```
+VITE_API_KEY=GEMINI_API_KEY
+```
+
+### 4. Run the app
+
+```bash
+npm run dev
+```
+
+---
+
+## 🎮 Usage
+
+1. Select a topic (e.g., General Knowledge, Science, Movies).
+2. You can also enter any custom topic for quiz.
+3. AI generates 5 MCQs dynamically.
+4. Answer questions one by one.
+5. View your score and get custom AI feedback.
+
+---
+
+## 📸 Screenshots
+
+### 🏠 Landing Page
+
+![Landing Page](./screenshots/landing.png)
+
+### 📝 Quiz Question
+
+![Quiz Question](./screenshots/question.png)
+
+### 🏆 Result Page
+
+![Result Page](./screenshots/result.png)
+
+> 📌 Place your screenshots in a `screenshots/` folder in the root directory and update the paths above.
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to open an issue or submit a pull request.
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 👨‍💻 Author
+
+Developed by **[Your Name](https://github.com/your-username)** 🚀
