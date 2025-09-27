@@ -58,7 +58,10 @@ The goal was to create a quiz platform where **questions are not hardcoded**, bu
   * Duplicate or missing options.
 
 * **Refined Prompt:**
-  *“Return exactly 5 multiple-choice questions in strict JSON format with fields: `question`, `options`, `answer`.”*
+  *`Generate quiz data in the following JSON format: 
+    [{ question: 'Question text?', option1: 'Option A', option2: 'Option B', option3: 'Option C', option4: 'Option D', ans: correct_option_number (1–4) }]. 
+    Generate 5 questions. Each should have exactly 4 options. 'ans' should be the number of the correct option (not the text). 
+    Keep the questions short and clear. Topic: ${topic}`*
 
 * **Solution:**
 
