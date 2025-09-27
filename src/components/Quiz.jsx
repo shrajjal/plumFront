@@ -28,7 +28,8 @@ const Quiz = () => {
     const fetchQuiz = async () => {
       setLoading(true);
       try {
-        const response = await axios.get(`http://localhost:3000/generate/${topic}`);
+        const response = await axios.get(`https://plum-project-backend.onrender.com/generate/${topic}
+`);
         const quizArray = response.data.array || [];
         setData(quizArray);
         setQuestion(quizArray[0] || null);
