@@ -1,6 +1,6 @@
 # 🤖 AI Quiz App
 
-An interactive quiz application powered by AI that generates multiple-choice questions (MCQs) dynamically based on selected topics. Built with **React**, **TailwindCSS**, and integrated with an AI API for question generation.
+An interactive quiz application powered by AI that generates multiple-choice questions (MCQs) dynamically based on selected topics. Built with **React**, **TailwindCSS**, and integrated with Gemini API for question generation.
 
 ---
 
