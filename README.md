@@ -26,16 +26,29 @@ An interactive quiz application powered by AI that generates multiple-choice que
 ## 📂 Project Structure
 
 ```
-AI-Quiz-App/
-│── public/
-│── src/
-│   ├── assets/          # Static data & images
-│   ├── components/      # Reusable UI components
-│   ├── pages/           # Quiz screens & landing page
-│   ├── App.js           # Main app entry
-│   ├── index.js         # React root
-│── package.json
-│── README.md
+## 📂 Project Structure
+
+```
+plumFront/
+│── public/               # Static files served directly
+│── screenshots/          # App screenshots for README
+│── src/                  # Main source code
+│   ├── assets/           # Images, data, or static resources
+│   ├── components/       # Reusable UI components
+│   ├── LandingPage.jsx   # Landing page component
+│   ├── Quiz.jsx          # Quiz component
+│   ├── App.jsx           # Root app component
+│   ├── main.jsx          # React entry point
+│   └── index.css         # Global styles
+│── .gitignore            # Files to ignore in git
+│── README.md             # Project documentation
+│── index.html            # HTML template
+│── vite.config.js        # Vite configuration
+│── tailwind.config.js    # TailwindCSS configuration
+│── postcss.config.js     # PostCSS configuration
+│── eslint.config.js      # ESLint configuration
+```
+
 ```
 
 ---
