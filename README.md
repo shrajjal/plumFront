@@ -102,7 +102,7 @@ npm run dev
 
 ![Result Page](./screenshots/result.png)
 
-> 📌 Place your screenshots in a `screenshots/` folder in the root directory and update the paths above.
+
 
 ---
 
@@ -114,10 +114,10 @@ Contributions are welcome! Feel free to open an issue or submit a pull request.
 
 ## 📜 License
 
-This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
+This project is licensed under the Shrajjal License – see the [LICENSE](LICENSE) file for details.
 
 ---
 
 ## 👨‍💻 Author
 
-Developed by **[Your Name](https://github.com/your-username)** 🚀
+Developed by **[Shrajjal Prakash](https://github.com/shrajjal)** 🚀
