@@ -26,9 +26,6 @@ An interactive quiz application powered by AI that generates multiple-choice que
 ## 📂 Project Structure
 
 ```
-## 📂 Project Structure
-
-```
 plumFront/
 │── public/               # Static files served directly
 │── screenshots/          # App screenshots for README
@@ -49,9 +46,6 @@ plumFront/
 │── eslint.config.js      # ESLint configuration
 ```
 
-```
-
----
 
 ## ⚡ Getting Started
 
