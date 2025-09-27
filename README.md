@@ -1,6 +1,6 @@
 # 🤖 AI Quiz App
 
-An interactive quiz application powered by AI that generates multiple-choice questions (MCQs) dynamically based on selected topics. Built with **React**, **TailwindCSS**, and integrated with Gemini API for question generation.
+An interactive quiz application powered by AI that generates multiple-choice questions (MCQs) dynamically based on selected topics. Built with **React**, **TailwindCSS**, and integrated with **Gemini API** for question generation.
 
 ---
 
@@ -29,7 +29,45 @@ An interactive quiz application powered by AI that generates multiple-choice que
 
 ---
 
-## 📂 Project Structure
+## 1️⃣ Problem Understanding
+
+The goal was to create a quiz platform where **questions are not hardcoded**, but generated in real-time by an AI model.
+
+### Key Requirements
+
+* Generate **5 MCQs per quiz** dynamically.
+* Support both **predefined** and **custom topics**.
+* Provide **scoring** and **personalized AI feedback**.
+
+### Assumptions
+
+* AI sometimes returns invalid JSON → handled with **retry + cleanup logic**.
+* Limited to single-answer MCQs for simplicity.
+* English is the default quiz language.
+
+---
+
+## 2️⃣ AI Prompts & Iterations
+
+* **Initial Prompt:**
+  *“Generate 5 multiple-choice questions on [topic] with 4 options and 1 correct answer in JSON format.”*
+
+* **Issues Faced:**
+
+  * AI sometimes gave plain text instead of JSON.
+  * Duplicate or missing options.
+
+* **Refined Prompt:**
+  *“Return exactly 5 multiple-choice questions in strict JSON format with fields: `question`, `options`, `answer`.”*
+
+* **Solution:**
+
+  * Added a **parser utility** to sanitize AI output.
+  * Implemented a **retry mechanism** when JSON parsing failed.
+
+---
+
+## 3️⃣ Architecture & Project Structure
 
 ```
 plumFront/
@@ -88,7 +126,7 @@ npm run dev
 ## 🎮 Usage
 
 1. Select a topic (e.g., General Knowledge, Science, Movies).
-2. You can also enter any custom topic for quiz.
+2. Enter any **custom topic** for quiz.
 3. AI generates 5 MCQs dynamically.
 4. Answer questions one by one.
 5. View your score and get custom AI feedback.
@@ -111,6 +149,29 @@ npm run dev
 
 ---
 
+## 4️⃣ Known Issues / Improvements
+
+* ⚠️ AI may occasionally generate vague or repetitive questions.
+* ⚠️ No time limit per question yet.
+* ⚠️ Basic styling — can be improved with transitions.
+
+### Future Improvements
+
+* ⏳ Add **timed quizzes**.
+* 🌙 Add **dark mode**.
+* 🌍 Add **multi-language support**.
+* 📊 Save user progress across sessions.
+
+---
+
+## 5️⃣ Bonus Work
+
+* ✨ Retry mechanism for invalid AI responses.
+* ✨ Option to input custom quiz topics.
+* ✨ Clean, responsive UI with TailwindCSS.
+
+---
+
 ## 🤝 Contributing
 
 Contributions are welcome! Feel free to open an issue or submit a pull request.
@@ -119,7 +180,7 @@ Contributions are welcome! Feel free to open an issue or submit a pull request.
 
 ## 📜 License
 
-This project is licensed under the Shrajjal License – see the [LICENSE](LICENSE) file for details.
+This project is licensed under the **Shrajjal License** – see the [LICENSE](LICENSE) file for details.
 
 ---
 
