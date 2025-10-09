@@ -144,93 +144,104 @@ const Quiz = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#D8C7FF] to-[#19006C] font-[poppins] flex items-start justify-center py-20">
-      <div className="w-[640px] bg-white text-[#262626] flex flex-col gap-5 rounded-[10px] px-[50px] py-[40px]">
-        <h1 className="text-3xl font-bold text-[#553f9a] mb-4">Quiz questions</h1>
-        <hr className="mb-0.5" />
+  <div className="min-h-screen bg-gradient-to-b from-[#D8C7FF] to-[#19006C] font-[poppins] flex items-start justify-center py-10 sm:py-20">
+    <div className="w-full max-w-[640px] bg-white text-[#262626] flex flex-col gap-5 rounded-[10px] px-5 sm:px-[50px] py-6 sm:py-[40px] mx-3">
+      <h1 className="text-2xl sm:text-3xl font-bold text-[#553f9a] mb-4 text-center sm:text-left">
+        Quiz questions
+      </h1>
+      <hr className="mb-0.5" />
 
-        {loading ? (
-          <div className="flex flex-col items-center justify-center h-64">
-            <div className="loader ease-linear rounded-full border-8 border-t-8 border-gray-200 h-20 w-20 mb-4"></div>
-            <p className="text-lg">Generating quiz, please wait...</p>
-          </div>
-        ) : result ? (
-          <>
-            <h2 className="text-xl font-semibold mb-4">
-              You scored {score} out of {data.length}
-            </h2>
-            <p className="text-lg mb-6">{feedbackMessage()}</p>
+      {loading ? (
+        <div className="flex flex-col items-center justify-center h-64">
+          <div className="loader ease-linear rounded-full border-8 border-t-8 border-gray-200 h-20 w-20 mb-4"></div>
+          <p className="text-lg">Generating quiz, please wait...</p>
+        </div>
+      ) : result ? (
+        <>
+          <h2 className="text-lg sm:text-xl font-semibold mb-4 text-center">
+            You scored {score} out of {data.length}
+          </h2>
+          <p className="text-base sm:text-lg mb-6 text-center">{feedbackMessage()}</p>
+          <div className="flex justify-center">
             <button
               onClick={reset}
-              className="w-[120px] h-[50px] bg-[#553f9a] text-white text-lg font-medium rounded-lg cursor-pointer"
+              className="w-[120px] h-[45px] sm:h-[50px] bg-[#553f9a] text-white text-base sm:text-lg font-medium rounded-lg cursor-pointer"
             >
               Reset
             </button>
-            <div
-              onClick={() => navigate("/")}
-              className="text-blue-500 cursor-pointer hover:underline mt-1 text-center"
-            >
-              Click here to go back to Home
-            </div>
-          </>
-        ) : question ? (
-          <>
-            <h2 className="text-[27px] font-medium">{index + 1}. {question.question}</h2>
-            <ul>
-              {[question.option1, question.option2, question.option3, question.option4].map((opt, i) => (
-                <li
-                  key={i}
-                  ref={option_array[i]}
-                  onClick={(e) => checkAns(e, i + 1)}
-                  className="flex items-center h-[50px] pl-[15px] border border-[#686868] rounded-lg mb-2 text-[20px] cursor-pointer"
-                >
-                  {opt}
-                </li>
-              ))}
-            </ul>
-            <div className="flex justify-between mt-1">
-              <button
-                onClick={prev}
-                disabled={index === 0}
-                className={`w-[120px] h-[50px] rounded-lg font-medium ${
-                  index === 0 ? "bg-gray-300 text-gray-600 cursor-not-allowed" : "bg-gray-500 text-white hover:bg-gray-600"
-                }`}
+          </div>
+          <div
+            onClick={() => navigate("/")}
+            className="text-blue-500 cursor-pointer hover:underline mt-2 text-center"
+          >
+            Click here to go back to Home
+          </div>
+        </>
+      ) : question ? (
+        <>
+          <h2 className="text-lg sm:text-[27px] font-medium leading-snug">
+            {index + 1}. {question.question}
+          </h2>
+          <ul>
+            {[question.option1, question.option2, question.option3, question.option4].map((opt, i) => (
+              <li
+                key={i}
+                ref={option_array[i]}
+                onClick={(e) => checkAns(e, i + 1)}
+                className="flex items-center p-3 border border-[#686868] rounded-lg mb-2 text-base sm:text-lg cursor-pointer whitespace-normal break-words"
               >
-                Previous
-              </button>
-              <button
-                onClick={next}
-                className="w-[120px] h-[50px] bg-[#553f9a] text-white text-lg font-medium rounded-lg cursor-pointer"
-              >
-                {index === data.length - 1 ? "Finish" : "Next"}
-              </button>
-            </div>
-            <div className="mt-1 text-gray-600">{index + 1} of {data.length} questions</div>
-            <div
-              onClick={() => navigate("/")}
-              className="text-blue-500 cursor-pointer hover:underline mt-1 text-center"
+                {opt}
+              </li>
+            ))}
+          </ul>
+          <div className="flex justify-between mt-2 flex-wrap gap-2">
+            <button
+              onClick={prev}
+              disabled={index === 0}
+              className={`flex-1 sm:flex-none min-w-[100px] h-[45px] sm:h-[50px] rounded-lg font-medium ${
+                index === 0
+                  ? "bg-gray-300 text-gray-600 cursor-not-allowed"
+                  : "bg-gray-500 text-white hover:bg-gray-600"
+              }`}
             >
-              Click here to go back to Home
-            </div>
-          </>
-        ) : (
-          <p>No quiz available for this topic.</p>
-        )}
-      </div>
-
-      {/* Spinner CSS */}
-      <style>{`
-        .loader {
-          border-top-color: #553f9a;
-          animation: spin 1s linear infinite;
-        }
-        @keyframes spin {
-          0% { transform: rotate(0deg); }
-          100% { transform: rotate(360deg); }
-        }
-      `}</style>
+              Previous
+            </button>
+            <button
+              onClick={next}
+              className="flex-1 sm:flex-none min-w-[100px] h-[45px] sm:h-[50px] bg-[#553f9a] text-white text-base sm:text-lg font-medium rounded-lg cursor-pointer"
+            >
+              {index === data.length - 1 ? "Finish" : "Next"}
+            </button>
+          </div>
+          <div className="mt-2 text-gray-600 text-center sm:text-left">
+            {index + 1} of {data.length} questions
+          </div>
+          <div
+            onClick={() => navigate("/")}
+            className="text-blue-500 cursor-pointer hover:underline mt-2 text-center"
+          >
+            Click here to go back to Home
+          </div>
+        </>
+      ) : (
+        <p>No quiz available for this topic.</p>
+      )}
     </div>
-  );
+
+    {/* Spinner CSS */}
+    <style>{`
+      .loader {
+        border-top-color: #553f9a;
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    `}</style>
+  </div>
+);
+
 };
 
 export default Quiz;
